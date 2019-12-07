@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/animation_btn"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Animation"
+        android:paddingLeft="60dp"
+        android:background="@color/white"
+        android:fontFamily="sans-serif"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:gravity="left|center_vertical"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:background="@color/ash"/>
+
+    <Button
+        android:id="@+id/movie_btn"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="MOVIE"
+        android:paddingLeft="60dp"
+        android:background="@color/white"
+        android:fontFamily="sans-serif"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:gravity="left|center_vertical"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:background="@color/ash"/>
+
+    <Button
+        android:id="@+id/tv_btn"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="TV SHOW"
+        android:paddingLeft="60dp"
+        android:background="@color/white"
+        android:fontFamily="sans-serif"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:gravity="left|center_vertical"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:background="@color/ash"/>
+
+    <Button
+        android:id="@+id/tvanm_btn"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="TV SHOW (ANIMATED)"
+        android:paddingLeft="60dp"
+        android:background="@color/white"
+        android:fontFamily="sans-serif"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:gravity="left|center_vertical"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:background="@color/ash"/>
+
+    <Button
+        android:id="@+id/celebrity_btn"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Celebrity"
+        android:paddingLeft="60dp"
+        android:background="@color/white"
+        android:fontFamily="sans-serif"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:gravity="left|center_vertical"/>
+
+</LinearLayout>

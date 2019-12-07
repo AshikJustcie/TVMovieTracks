@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "185635260719",
+    "firebase_url": "https://tvmovietracks.firebaseio.com",
+    "project_id": "tvmovietracks",
+    "storage_bucket": "tvmovietracks.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:185635260719:android:c87573ad7fa36e7c4fb9da",
+        "android_client_info": {
+          "package_name": "com.example.tvmovietracks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "185635260719-idkfpr962g2fjfnjul27gvnmk1gdtsqk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tvmovietracks",
+            "certificate_hash": "f7728eb39512e3268d3cbd1a9535f621a07440ef"
+          }
+        },
+        {
+          "client_id": "185635260719-qn1c7k308vfovgk0qc9g8j4b1ooslttn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxftJYZEclTtEctQD7eXWnbvyA6gCW3AU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "185635260719-qn1c7k308vfovgk0qc9g8j4b1ooslttn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
