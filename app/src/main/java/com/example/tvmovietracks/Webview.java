@@ -20,6 +20,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 public class Webview extends AppCompatActivity {
 
@@ -75,7 +76,7 @@ public class Webview extends AppCompatActivity {
             @Override
             public void onReceivedTitle(WebView view, String title) {
                 super.onReceivedTitle(view, title);
-                textView.setText(title);
+                textView.setText(title);;
             }
 
             @Override
