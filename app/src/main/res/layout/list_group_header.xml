@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="10dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/nav_menu_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center|center_vertical"
+            android:src="@drawable/ic_expand_more_black_24dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/lblListHeader"
+        android:layout_width="0dp"
+        android:layout_height="?attr/listPreferredItemHeightSmall"
+        android:layout_weight="5"
+        android:gravity="center_vertical"
+        android:paddingLeft="5dp"
+        android:paddingRight="?attr/listPreferredItemPaddingRight"
+        android:textColor="#004D40"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/help_group_indicator"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center|center_vertical"
+            android:src="@drawable/ic_expand_more_black_24dp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

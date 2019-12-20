@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/menu_genre"
+        android:icon="@drawable/ic_bubble_chart_white_24dp"
+        android:title="Genre" />
+
+    <item
+        android:id="@+id/menu_company"
+        android:icon="@drawable/ic_company_domain_black_24dp"
+        android:title="Company" />
+
+    <item
+        android:id="@+id/menu_keyword"
+        android:icon="@drawable/ic_vpn_key_black_24dp"
+        android:title="Keyword"/>
+
+</menu>

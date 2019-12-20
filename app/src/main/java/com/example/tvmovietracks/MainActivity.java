@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
 
         anm = findViewById(R.id.animation_btn);
         mov = findViewById(R.id.movie_btn);
-        tvs = findViewById(R.id.tv_btn); 
+        tvs = findViewById(R.id.tv_btn);
 
 
 

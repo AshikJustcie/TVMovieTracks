@@ -2,6 +2,7 @@ package com.example.tvmovietracks;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -20,13 +21,14 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
+
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 public class Webview extends AppCompatActivity {
 
+    private Toolbar toolbar;
     private WebView webView;
-    ImageView imageView;
-    TextView textView;
+    CollapsingToolbarLayout collapsingToolbarLayout;
     ProgressBar progressBar;
     LinearLayout progressLayout;
     String myCurrentUrl;
@@ -34,17 +36,43 @@ public class Webview extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_webview);
+        setContentView(R.layout.activity_web);
+
+        toolbar = findViewById(R.id.toolbarwbm);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        collapsingToolbarLayout = findViewById(R.id.toolbar_layout);
 
 
         progressBar = findViewById(R.id.webProgress);
-        imageView = findViewById(R.id.webImage);
-        textView = findViewById(R.id.webTitle);
+        //imageView = findViewById(R.id.webImage);
+       // textView = findViewById(R.id.webTitle);
         progressLayout = findViewById(R.id.progress_layout);
 
         webView = findViewById(R.id.webview);
 
         webView.loadUrl("https://www.imdb.com/");
+
+        //DC Comics
+        //webView.loadUrl("https://www.imdb.com/search/keyword/?keywords=dc-comics&ref_=tt_stry_kw");
+
+        //Marvel Comics
+        //webView.loadUrl("https://www.imdb.com/search/keyword/?keywords=marvel-comics&ref_=fn_al_kw_1");
+
+        //Superhero
+        //webView.loadUrl("https://www.imdb.com/search/keyword/?keywords=superhero&ref_=kw_ref_key&sort=moviemeter,asc&mode=detail&page=1");
+
+        //Character Name In Title
+        //webView.loadUrl("https://www.imdb.com/search/keyword/?keywords=character-name-in-title&ref_=kw_ref_key&sort=moviemeter,asc&mode=detail&page=1");
+
+        //Keywords Imdb
+        //webView.loadUrl("https://www.imdb.com/search/keyword/");
+
+        //Disney
+        //webView.loadUrl("https://www.imdb.com/search/keyword/?keywords=disney&ref_=fn_al_kw_1");
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
@@ -76,13 +104,14 @@ public class Webview extends AppCompatActivity {
             @Override
             public void onReceivedTitle(WebView view, String title) {
                 super.onReceivedTitle(view, title);
-                textView.setText(title);;
+                collapsingToolbarLayout.setTitleEnabled(false);
+                toolbar.setTitle(title);
             }
 
             @Override
             public void onReceivedIcon(WebView view, Bitmap icon) {
                 super.onReceivedIcon(view, icon);
-                imageView.setImageBitmap(icon);
+                //imageView.setImageBitmap(icon);
             }
 
         });
