@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -20,13 +22,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ExpandableListView;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.tvmovietracks.Bottom_Fragments.CompanyFragment;
+import com.example.tvmovietracks.Bottom_Fragments.GenreFragment;
+import com.example.tvmovietracks.Bottom_Fragments.HomeFragment;
+import com.example.tvmovietracks.Bottom_Fragments.KeywordFragment;
 import com.example.tvmovietracks.ExpandableListView.ExpandableListAdapter;
 import com.example.tvmovietracks.ExpandableListView.MenuModel;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.mikhaellopez.circularimageview.CircularImageView;
@@ -48,6 +57,14 @@ public class MainActivity extends AppCompatActivity {
     List<MenuModel> headerList = new ArrayList<>();
     HashMap<MenuModel, List<MenuModel>> childList = new HashMap<>();
 
+    private BottomNavigationView mMainNav;
+    private FrameLayout mMainFrame;
+
+    private HomeFragment homeFragment;
+    private GenreFragment genreFragment;
+    private CompanyFragment companyFragment;
+    private KeywordFragment keywordFragment;
+
     @Override
     public void onStart() {
         super.onStart();
@@ -62,7 +79,40 @@ public class MainActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbarMA);
         setSupportActionBar(toolbar);
 
+        mMainNav = findViewById(R.id.main_nav_bottom);
+        mMainFrame = findViewById(R.id.main_frame);
 
+        homeFragment = new HomeFragment();
+        genreFragment = new GenreFragment();
+        companyFragment = new CompanyFragment();
+        keywordFragment = new KeywordFragment();
+
+        setFragment(homeFragment);
+
+        mMainNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+                switch (menuItem.getItemId()) {
+                    case R.id.menu_home:
+                        setFragment(homeFragment);
+                        return true;
+                    case R.id.menu_genre:
+                        setFragment(genreFragment);
+                        return true;
+                    case R.id.menu_company:
+                        setFragment(companyFragment);
+                        return true;
+                    case R.id.menu_keyword:
+                        setFragment(keywordFragment);
+                        return true;
+
+                        default:
+                            return false;
+                }
+
+            }
+        });
 
         expandableListView = findViewById(R.id.expandableListView);
         prepareMenuData();
@@ -119,21 +169,7 @@ public class MainActivity extends AppCompatActivity {
 
         anm = findViewById(R.id.animation_btn);
         mov = findViewById(R.id.movie_btn);
-        tvs = findViewById(R.id.tv_btn);
-
-        anm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Webview.class));
-            }
-        });
-
-        mov.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Webview.class));
-            }
-        });
+        tvs = findViewById(R.id.tv_btn); 
 
 
 
@@ -367,5 +403,11 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog dialog = builder.create();
         dialog.show();
 
+    }
+
+    public void setFragment(Fragment fragment) {
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.main_frame,fragment);
+        fragmentTransaction.commit();
     }
 }
