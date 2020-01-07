@@ -5,12 +5,20 @@
     <string name="cancel">CANCEL</string>
     <string name="title_activity_web_view">WebViewActivity</string>
 
+    <string name="Animation">Animation</string>
+    <string name="Movie">Movie</string>
+    <string name="TV_Show">TV Show</string>
+    <string name="TV_Animated">TV Animated</string>
+    <string name="Celebrity">Celebrity</string>
+    <string name="Singer">Singer</string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">User Name</string>
     <string name="nav_header_subtitle">account@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="watch_status">Watch Status</string>
 
     <string name="large_text">
         "Material is the metaphor.\n\n"
@@ -104,4 +112,8 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_celebrity">CelebrityActivity</string>
+    <string name="tab_text_1">Actor</string>
+    <string name="tab_text_2">Actress</string>
+    <string name="tab_text_3">Singer</string>
 </resources>

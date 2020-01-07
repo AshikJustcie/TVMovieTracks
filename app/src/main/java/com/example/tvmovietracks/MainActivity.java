@@ -33,6 +33,8 @@ import com.example.tvmovietracks.Bottom_Fragments.CompanyFragment;
 import com.example.tvmovietracks.Bottom_Fragments.GenreFragment;
 import com.example.tvmovietracks.Bottom_Fragments.HomeFragment;
 import com.example.tvmovietracks.Bottom_Fragments.KeywordFragment;
+import com.example.tvmovietracks.DataActivity.MovieActivity;
+import com.example.tvmovietracks.DataActivity.TVActivity;
 import com.example.tvmovietracks.ExpandableListView.ExpandableListAdapter;
 import com.example.tvmovietracks.ExpandableListView.MenuModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -46,8 +48,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button anm, mov, tvs ;
     private Toolbar toolbar;
+    String Type;
 
     FirebaseAuth mAuth;
     FirebaseAuth.AuthStateListener mAuthListner;
@@ -167,10 +169,6 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        anm = findViewById(R.id.animation_btn);
-        mov = findViewById(R.id.movie_btn);
-        tvs = findViewById(R.id.tv_btn);
-
 
 
     }
@@ -198,9 +196,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.menu_search:
-
-                break;
 
             case R.id.menu_signUp:
                 if (FirebaseAuth.getInstance().getCurrentUser() == null) {
@@ -337,42 +332,86 @@ public class MainActivity extends AppCompatActivity {
 
                     String toastMessage = "\nGroupPostion" + groupPosition + "\nGroupName:" + ss;
                     if (groupPosition == 0) {
-                        Toast.makeText(MainActivity.this, toastMessage, Toast.LENGTH_SHORT).show();
-                        onBackPressed();
-                    }
-                    else if (groupPosition == 1) {
-
+                        Type = "Animation";
                         if (childName.equals("WatchList")) {
-                            Toast.makeText(MainActivity.this, "WatchList", Toast.LENGTH_SHORT).show();
-                            Toast.makeText(MainActivity.this, toastMessage, Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(MainActivity.this, MovieActivity.class);
+                            intent.putExtra("WTypeTitle",Type);
+                            intent.putExtra("WStatusSubTitle","WatchList");
+                            startActivity(intent);
                             onBackPressed();
                         }
                         if (childName.equals("Watched")) {
-                            Toast.makeText(MainActivity.this, "Watched", Toast.LENGTH_SHORT).show();
-                            Toast.makeText(MainActivity.this, toastMessage, Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(MainActivity.this, MovieActivity.class);
+                            intent.putExtra("WTypeTitle",Type);
+                            intent.putExtra("WStatusSubTitle","Watched");
+                            startActivity(intent);
+                            onBackPressed();
+                        }
+                    }
+                    else if (groupPosition == 1) {
+                        Type = "Movie";
+                        if (childName.equals("WatchList")) {
+                            Intent intent = new Intent(MainActivity.this, MovieActivity.class);
+                            intent.putExtra("WTypeTitle",Type);
+                            intent.putExtra("WStatusSubTitle","WatchList");
+                            startActivity(intent);
+                            onBackPressed();
+                        }
+                        if (childName.equals("Watched")) {
+                            Intent intent = new Intent(MainActivity.this, MovieActivity.class);
+                            intent.putExtra("WTypeTitle",Type);
+                            intent.putExtra("WStatusSubTitle","Watched");
+                            startActivity(intent);
                             onBackPressed();
                         }
                     }
                     else  if (groupPosition == 2) {
-
+                        Type = "TV Show";
                         if (childName.equals("Watching")) {
-                            Toast.makeText(MainActivity.this, "Watching", Toast.LENGTH_SHORT).show();
-                            Toast.makeText(MainActivity.this, toastMessage, Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(MainActivity.this, TVActivity.class);
+                            intent.putExtra("WTypeTitle",Type);
+                            intent.putExtra("WStatusSubTitle","Watching");
+                            startActivity(intent);
                             onBackPressed();
                         }
                         if (childName.equals("WatchList")) {
-                            Toast.makeText(MainActivity.this, "WatchList", Toast.LENGTH_SHORT).show();
-                            Toast.makeText(MainActivity.this, toastMessage, Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(MainActivity.this, TVActivity.class);
+                            intent.putExtra("WTypeTitle",Type);
+                            intent.putExtra("WStatusSubTitle","WatchList");
+                            startActivity(intent);
                             onBackPressed();
                         }
                         if (childName.equals("Watched")) {
-                            Toast.makeText(MainActivity.this, "Watched", Toast.LENGTH_SHORT).show();
-                            Toast.makeText(MainActivity.this, toastMessage, Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(MainActivity.this, TVActivity.class);
+                            intent.putExtra("WTypeTitle",Type);
+                            intent.putExtra("WStatusSubTitle","Watched");
+                            startActivity(intent);
                             onBackPressed();
                         }
                     }
                     else if (groupPosition == 3) {
-
+                        Type = "TV Animated";
+                        if (childName.equals("Watching")) {
+                            Intent intent = new Intent(MainActivity.this, TVActivity.class);
+                            intent.putExtra("WTypeTitle",Type);
+                            intent.putExtra("WStatusSubTitle","Watching");
+                            startActivity(intent);
+                            onBackPressed();
+                        }
+                        if (childName.equals("WatchList")) {
+                            Intent intent = new Intent(MainActivity.this, TVActivity.class);
+                            intent.putExtra("WTypeTitle",Type);
+                            intent.putExtra("WStatusSubTitle","WatchList");
+                            startActivity(intent);
+                            onBackPressed();
+                        }
+                        if (childName.equals("Watched")) {
+                            Intent intent = new Intent(MainActivity.this, TVActivity.class);
+                            intent.putExtra("WTypeTitle",Type);
+                            intent.putExtra("WStatusSubTitle","Watched");
+                            startActivity(intent);
+                            onBackPressed();
+                        }
                     }
                 }
 

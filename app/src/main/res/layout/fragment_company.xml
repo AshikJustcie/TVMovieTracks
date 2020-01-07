@@ -5,10 +5,262 @@
     android:layout_height="match_parent"
     tools:context=".Bottom_Fragments.CompanyFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <GridLayout
+        android:id="@+id/mainGridfc"
+        android:columnCount="1"
+        android:rowCount="11"
+        android:alignmentMode="alignMargins"
+        android:columnOrderPreserved="false"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <!-- Column 1 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="12dp"
+            android:background="@color/white"
+            android:padding="8dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="20th Century Fox"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+
+        <!-- Column 2 -->
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="12dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="DreamWorks Pictures "
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 3 -->
+
+        <!-- Column 4 -->
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="12dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Metro-Goldwyn-Mayer Studios"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 5 -->
+
+        <!-- Column 6 -->
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="12dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Paramount Pictures"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 7 -->
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="12dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Sony Pictures Motion Picture Group"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 8 -->
+
+        <!-- Column 9 -->
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="12dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Universal Pictures"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 10 -->
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="12dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Walt Disney Studios"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 11 -->
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Warner Bros."
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+    </GridLayout>
 
 </FrameLayout>

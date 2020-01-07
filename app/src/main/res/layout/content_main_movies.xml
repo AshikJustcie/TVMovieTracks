@@ -16,7 +16,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:background="#4B000000"
+            android:background="@color/white"
             android:orientation="horizontal">
 
             <TextView
@@ -30,6 +30,11 @@
 
         </LinearLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:background="#4B000000"/>
+
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,8 +42,8 @@
             android:scrollbars="none">
 
             <GridLayout
-                android:id="@+id/mainGrid2"
-                android:columnCount="6"
+                android:id="@+id/mainGridCMM"
+                android:columnCount="5"
                 android:rowCount="1"
                 android:alignmentMode="alignMargins"
                 android:columnOrderPreserved="false"
@@ -47,6 +52,7 @@
                 android:paddingBottom="5dp">
 
                 <!-- Column 1 -->
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -60,21 +66,21 @@
                     android:padding="5dp">
 
                     <ImageView
-                        android:layout_width="50dp"
+                        android:layout_width="45dp"
                         android:layout_height="50dp"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/ic_mood_black_24dp"/>
+                        android:src="@drawable/ic_new_releases_black_24dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Genre"
+                        android:text="Coming Soon"
                         android:layout_gravity="center_horizontal|center_vertical"
                         android:textColor="@android:color/black"
-                        android:textSize="12sp"/>
+                        android:textSize="12sp"
+                        />
 
                 </LinearLayout>
-
 
                 <!-- Column 2 -->
 
@@ -99,14 +105,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Rated"
+                        android:text="Top Rated"
                         android:layout_gravity="center_horizontal|center_vertical"
                         android:textColor="@android:color/black"
                         android:textSize="12sp" />
 
                 </LinearLayout>
 
-                <!-- Column 3 -->
+                <!-- Column 3-->
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -155,12 +161,12 @@
                         android:layout_width="45dp"
                         android:layout_height="50dp"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/ic_featured_play_list_black_24dp" />
+                        android:src="@drawable/ic_account_balance_wallet_black_24dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="News"
+                        android:text="Box Office"
                         android:layout_gravity="center_horizontal|center_vertical"
                         android:textColor="@android:color/black"
                         android:textSize="12sp"
@@ -183,38 +189,7 @@
                     android:padding="5dp">
 
                     <ImageView
-                        android:layout_width="45dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center_horizontal"
-                        android:src="@drawable/ic_featured_play_list_black_24dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="News"
-                        android:layout_gravity="center_horizontal|center_vertical"
-                        android:textColor="@android:color/black"
-                        android:textSize="12sp"
-                        />
-
-                </LinearLayout>
-
-                <!-- Column 6 -->
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginRight="12dp"
-                    android:orientation="vertical"
-                    android:padding="5dp">
-
-                    <ImageView
-                        android:layout_width="45dp"
+                        android:layout_width="40dp"
                         android:layout_height="50dp"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/ic_featured_play_list_black_24dp" />

@@ -13,13 +13,14 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:id="@+id/statusLayout"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:background="#4B000000"
+            android:background="@color/white"
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/info_text1"
+                android:id="@+id/watchStatusM"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="5"
@@ -47,8 +48,13 @@
 
         </LinearLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:background="#4B000000"/>
+
         <GridLayout
-            android:id="@+id/mainGrid"
+            android:id="@+id/mainGridCMS"
             android:columnCount="4"
             android:rowCount="1"
             android:alignmentMode="alignMargins"

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="watch_StatusM">
+        <item>WatchList</item>
+        <item>Watched</item>
+    </array>
+
+    <array name="watch_StatusT">
+        <item>WatchList</item>
+        <item>Watching</item>
+        <item>Watched</item>
+    </array>
+
+    <array name="TypeCat">
+        <item>Animation</item>
+        <item>Movie</item>
+        <item>TV Show</item>
+        <item>TV Animated</item>
+        <item>Celebrity</item>
+        <item>Singer</item>
+    </array>
+
+    <array name="Collection">
+        <item>In Collection</item>
+        <item>Not Collected</item>
+        <item>Must Collect</item>
+    </array>
+    
+    <array name="Listview_Item_Options">
+        <item>Visit</item>
+        <item>Edit</item>
+        <item>Delete</item>
+        <item>Cancel</item>
+    </array>
+
+</resources>

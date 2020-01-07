@@ -13,8 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".PostActivity"></activity>
         <activity
             android:name=".SignUpActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -25,7 +24,21 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".Webview"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DataActivity.MovieActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AddMainActivity" />
+        <activity android:name=".EditMainActivity" />
+        <activity
+            android:name=".DataActivity.TVActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DataActivity.CelebrityActivity"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 

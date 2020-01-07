@@ -1,12 +1,17 @@
 package com.example.tvmovietracks;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.widget.NestedScrollView;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -19,6 +24,7 @@ import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,8 +37,11 @@ public class Webview extends AppCompatActivity {
     CollapsingToolbarLayout collapsingToolbarLayout;
     ProgressBar progressBar;
     LinearLayout progressLayout;
-    String myCurrentUrl;
+    String myCurrentUrl,myPreviousUrl,myTitle;
+    NestedScrollView nestedScrollView;
 
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,8 +50,11 @@ public class Webview extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbarwbm);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayShowHomeEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        Intent intent = getIntent();
+        myPreviousUrl = intent.getStringExtra("webaddress");
 
         collapsingToolbarLayout = findViewById(R.id.toolbar_layout);
 
@@ -51,31 +63,19 @@ public class Webview extends AppCompatActivity {
         //imageView = findViewById(R.id.webImage);
        // textView = findViewById(R.id.webTitle);
         progressLayout = findViewById(R.id.progress_layout);
+        nestedScrollView = findViewById(R.id.nested_scroll_view);
 
         webView = findViewById(R.id.webview);
 
-        webView.loadUrl("https://www.imdb.com/");
-
-        //DC Comics
-        //webView.loadUrl("https://www.imdb.com/search/keyword/?keywords=dc-comics&ref_=tt_stry_kw");
-
-        //Marvel Comics
-        //webView.loadUrl("https://www.imdb.com/search/keyword/?keywords=marvel-comics&ref_=fn_al_kw_1");
-
-        //Superhero
-        //webView.loadUrl("https://www.imdb.com/search/keyword/?keywords=superhero&ref_=kw_ref_key&sort=moviemeter,asc&mode=detail&page=1");
-
-        //Character Name In Title
-        //webView.loadUrl("https://www.imdb.com/search/keyword/?keywords=character-name-in-title&ref_=kw_ref_key&sort=moviemeter,asc&mode=detail&page=1");
-
-        //Keywords Imdb
-        //webView.loadUrl("https://www.imdb.com/search/keyword/");
-
-        //Disney
-        //webView.loadUrl("https://www.imdb.com/search/keyword/?keywords=disney&ref_=fn_al_kw_1");
+        webView.loadUrl(myPreviousUrl);
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
+
+        webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.TEXT_AUTOSIZING);
+
+        webSettings.setUseWideViewPort(true);
+        webSettings.setLoadWithOverviewMode(true);
 
         progressBar.setMax(100);
 
@@ -84,6 +84,7 @@ public class Webview extends AppCompatActivity {
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
                 progressLayout.setVisibility(View.VISIBLE);
                 super.onPageStarted(view, url, favicon);
+                nestedScrollView.scrollTo(0,0);
             }
 
             @Override
@@ -91,8 +92,14 @@ public class Webview extends AppCompatActivity {
                 progressLayout.setVisibility(View.GONE);
                 super.onPageFinished(view, url);
                 myCurrentUrl = url;
+
             }
         });
+
+
+
+
+
 
         webView.setWebChromeClient(new WebChromeClient() {
             @Override
@@ -106,6 +113,7 @@ public class Webview extends AppCompatActivity {
                 super.onReceivedTitle(view, title);
                 collapsingToolbarLayout.setTitleEnabled(false);
                 toolbar.setTitle(title);
+                myTitle = title;
             }
 
             @Override
@@ -139,13 +147,23 @@ public class Webview extends AppCompatActivity {
                 webView.reload();
                 break;
 
+            case R.id.menu_save:
+                Intent intent = new Intent(Webview.this, AddMainActivity.class);
+                intent.putExtra("WTitle",myTitle);
+                intent.putExtra("WLink", myCurrentUrl);
+                startActivity(intent);
+                finish();
+                break;
+
             case R.id.menu_share:
-                Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                /*ShareLinkContent content = new ShareLinkContent.Builder()
+                        .setContentUrl(Uri.parse("https://developers.facebook.com"))
+                        .build();*/
+                /*Intent shareIntent = new Intent(Intent.ACTION_SEND);
                 shareIntent.setType("text/plain");
                 shareIntent.putExtra(Intent.EXTRA_TEXT, myCurrentUrl);
                 shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Copied URL");
-                startActivity(Intent.createChooser(shareIntent, "Share URL with Friends"));
-
+                startActivity(Intent.createChooser(shareIntent, "Share URL with Friends"));*/
                 break;
         }
         return super.onOptionsItemSelected(item);

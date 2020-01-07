@@ -5,10 +5,865 @@
     android:layout_height="match_parent"
     tools:context=".Bottom_Fragments.CompanyFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <GridLayout
+        android:id="@+id/mainGridfk"
+        android:columnCount="3"
+        android:rowCount="10"
+        android:alignmentMode="alignMargins"
+        android:columnOrderPreserved="false"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <!-- Column 1 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/white"
+            android:padding="8dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Action Hero"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 2 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="12dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Ambiguous Ending"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 3 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Anime"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 4 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="B Movie"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 5 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Based On Book"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 6 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="12dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Based On Comic Book"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 7 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Bollywood"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 8 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Character Name In Title"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 9 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="12dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Criminal Mastermind"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 10 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Cyberpunk"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 11 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Dialogue Driven"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 12 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="12dp"
+            android:background="@color/white"
+            android:padding="8dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Fairy Tale"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 13 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="High School"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 14 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Kung Fu"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 15 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="12dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Multiple Perspectives"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 16 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Ninja"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 17 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="One Man Army"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 18 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="12dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Parenthood"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 19 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Parody"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 20 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Plot Twist"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 21 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="12dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Robot"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 22 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Southern Gothic"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 23 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Superhero"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 24 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="12dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="DC Comics"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 25 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Marvel Comics"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 26 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Supernatural"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 27 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="12dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Time Travel"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 28 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Vampire"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 29 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Virtual Reality"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Column 30 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="12dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/nav_header_vertical_spacing"
+            android:paddingTop="5dp"
+            android:paddingEnd="@dimen/nav_header_vertical_spacing"
+            android:paddingRight="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|left|center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Zombie"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+    </GridLayout>
 
 </FrameLayout>

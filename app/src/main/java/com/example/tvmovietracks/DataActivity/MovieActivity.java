@@ -1,15 +1,17 @@
-package com.example.tvmovietracks;
+package com.example.tvmovietracks.DataActivity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.MenuItemCompat;
 
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,11 +20,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.tvmovietracks.Adapter.ArtistList;
+import com.example.tvmovietracks.ArrayList.Artists;
+import com.example.tvmovietracks.EditMainActivity;
+import com.example.tvmovietracks.R;
+import com.example.tvmovietracks.Webview;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -33,7 +40,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class THEActivity extends AppCompatActivity {
+public class MovieActivity extends AppCompatActivity {
 
     ListView listView;
     List<Artists> artistsList;
@@ -68,19 +75,13 @@ public class THEActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("Movie");
+        //databaseReference = FirebaseDatabase.getInstance().getReference("Movie");
 
         if (TitleToolbar.equals("Animation")) {
             databaseReference = FirebaseDatabase.getInstance().getReference("Animation");
         }
         else if (TitleToolbar.equals("Movie")) {
             databaseReference = FirebaseDatabase.getInstance().getReference("Movie");
-        }
-        else if (TitleToolbar.equals("TV Show")) {
-            databaseReference = FirebaseDatabase.getInstance().getReference("TV Show");
-        }
-        else if (TitleToolbar.equals("TV Animated")){
-            databaseReference = FirebaseDatabase.getInstance().getReference("TV Animated");
         }
 
 
@@ -131,12 +132,120 @@ public class THEActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.listView);
         artistsList = new ArrayList<>();
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                String Id = artistsList.get(position).getId();
+                String Title = artistsList.get(position).getTitle();
+                String Link = artistsList.get(position).getLink();
+                String Status = artistsList.get(position).getStatus();
+                int rating = artistsList.get(position).getRating();
+                String Collection = artistsList.get(position).getCollection();
+
+                ShowOptionsDialog(Id,Title,Link,Status,rating,Collection);
+
+
+            }
+        });
+
+    }
+
+    private void ShowOptionsDialog(final String id,final String title, final String link,final String status,final int rating,final String collection) {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                LayoutInflater inflater = getLayoutInflater();
+                View v = inflater.inflate(R.layout.custom_dialog_title, null);
+                TextView titleD = v.findViewById(R.id.CustomDialogTitle);
+                titleD.setText(title);
+                builder.setCustomTitle(v)
+                        .setItems(R.array.Listview_Item_Options, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                if (which == 0) {
+                                    Intent intent = new Intent(MovieActivity.this, Webview.class);
+                                    intent.putExtra("webaddress", link);
+                                    startActivity(intent);
+                                }
+                                else if (which == 1) {
+                                    Intent intent = new Intent(MovieActivity.this, EditMainActivity.class);
+                                    intent.putExtra("DataID", id);
+                                    intent.putExtra("DataTITLE", title);
+                                    intent.putExtra("DataLINK", link);
+                                    intent.putExtra("DataSTATUS", status);
+                                    intent.putExtra("DataRATING", rating);
+                                    intent.putExtra("DataCOLLECTION", collection);
+                                    intent.putExtra("DataTYPE", TitleToolbar);
+                                    startActivity(intent);
+                                }
+                                else if (which == 2) {
+                                    DeleteDialog(id);
+                                }
+                                else {
+
+                                }
+                            }
+                        });
+
+                final AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+    }
+
+    private void DeleteDialog(String id) {
+        DatabaseReference dataRef = databaseReference.child(userID).child(id);
+
+        dataRef.removeValue();
+
+        Toast.makeText(this, "Successfully deleted!",Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
 
+        getAllData();
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu_dactivity, menu);
+
+        MenuItem item = menu.findItem(R.id.menu_search);
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(item);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+                if (!TextUtils.isEmpty(query.trim())) {
+                    searchData(query);
+                }
+                else {
+                    getAllData();
+                }
+                return false;
+
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                if (!TextUtils.isEmpty(newText.trim())) {
+                    searchData(newText);
+                }
+                else {
+                    getAllData();
+                }
+                return false;
+            }
+        });
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    private void getAllData() {
         databaseReference.child(userID).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
@@ -150,7 +259,7 @@ public class THEActivity extends AppCompatActivity {
                         artistsList.add(artists);
                     }
                 }
-                adapter = new ArtistList(THEActivity.this,artistsList);
+                adapter = new ArtistList(MovieActivity.this,artistsList);
                 listView.setAdapter(adapter);
 
                 SPBtnSts.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -168,7 +277,7 @@ public class THEActivity extends AppCompatActivity {
                                 artistsList.add(artists);
                             }
                         }
-                        adapter = new ArtistList(THEActivity.this,artistsList);
+                        adapter = new ArtistList(MovieActivity.this,artistsList);
                         listView.setAdapter(adapter);
                     }
 
@@ -186,47 +295,32 @@ public class THEActivity extends AppCompatActivity {
         });
     }
 
+    private void searchData(final String query) {
+        databaseReference.child(userID).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu_dactivity, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.menu_app_bar_search:
-                final SearchView searchView = (SearchView) item.getActionView();
-                searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-                    @Override
-                    public boolean onQueryTextSubmit(String query) {
-                        searchView.clearFocus();
-                        if(artistsList.contains(query)){
-                            adapter.getFilter().filter(query);
-                        }else{
-                            Toast.makeText(THEActivity.this, "No Match found",Toast.LENGTH_LONG).show();
+                artistsList.clear();
+                for (DataSnapshot artistSnapshot:dataSnapshot.getChildren()) {
+
+                    Artists artists = artistSnapshot.getValue(Artists.class);
+
+                    if (artists.getStatus().equals(SubTitleToolbar)) {
+
+                        if (artists.getTitle().toLowerCase().contains(query.toLowerCase())) {
+                            artistsList.add(artists);
                         }
-                        return false;
-
                     }
+                }
+                adapter = new ArtistList(MovieActivity.this,artistsList);
+                listView.setAdapter(adapter);
+            }
 
-                    @Override
-                    public boolean onQueryTextChange(String newText) {
-                        if(artistsList.contains(newText)){
-                            adapter.getFilter().filter(newText);
-                        }
-                        return false;
-                    }
-                });
-                break;
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            case R.id.menu_save:
-
-                break;
-
-        }
-        return super.onOptionsItemSelected(item);
+            }
+        });
     }
 
 }
